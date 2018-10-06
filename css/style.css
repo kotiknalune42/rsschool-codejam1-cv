@@ -1,0 +1,117 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background-color: black;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin:0;
+	padding:0;
+}
+/*.grid-container * {
+  border: 1px solid #ccc;
+} */
+
+.grid-container div:after {
+  content: attr(class);
+  color: #888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: arial;
+}
+
+h1 {
+	text-transform: uppercase;
+	color:white;
+	font-size: 4em;
+	padding-left:10%;
+	line-height:0.8;
+	margin: 20% 0%;
+}
+
+a {
+	text-decoration: none;
+	color:white;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+	margin:30px 0px 0px 70px;
+	display:inline-block;}
+	
+ul > li {
+	height:40px;}
+
+ul > li::before {
+	content: url("x.png");
+}
+
+ul > li > a {
+	border-bottom: 0px white solid;
+}
+
+ul>li>a:hover {
+	color:yellow;
+	-webkit-transition: 1s all ease-in-out;
+	transition:1s all ease-in-out;
+}
+.xlist {
+	list-style-image: url('/images/x.png') no-repeat;
+}
+mark {
+    background-color:transparent;
+    color:yellow; 
+    font-weight:bold;
+}
+.grid-container {
+  display: grid;
+  height: 100%;
+  max-width:1024px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 1px 1px;
+  grid-template-areas: "header header header header" "nav summary summary summary" "nav examples examples examples" "nav education education experience";
+}
+
+header {
+  display: grid;
+  grid-area: header;
+  grid-template-columns: 1fr / 1fr;
+  background-image:url("../images/me.png");
+  background-size:cover;
+  height:500px;
+}
+.summary {
+  display: grid;
+  grid-area: summary;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 1px 1px;
+  grid-template-areas: "text skills";
+}
+.text {
+  grid-area: text;
+}
+.skills {
+  grid-area: skills;
+}
+.examples {
+  grid-area: examples;
+}
+nav {
+  grid-area: nav;
+}
+.education {
+  grid-area: education;
+}
+.experience {
+  grid-area: experience;
+}
