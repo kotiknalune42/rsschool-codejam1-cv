@@ -2,8 +2,12 @@ html,
 body {
   margin: 0;
   height: 100%;
-  background-color: black;
+  background: #12c2e9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   font-family: 'Poppins', sans-serif;
+  color:white;
 
 }
 
@@ -15,15 +19,75 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #ccc;
 } */
 
-.grid-container div:after {
-  content: attr(class);
-  color: #888;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  font-family: arial;
+h2 {
+	font-size: 2.3em;
+    margin: 10px 0px;
+    border-left: #1dbde9 3px solid;
+    padding-left: 10px;
 }
+
+h3 {
+
+  text-align: center;
+  color: #fff;
+  font-size: 1em;
+  letter-spacing: 1em;
+  text-transform: uppercase;
+  padding: 30px 0px;
+  border: 1px solid white;
+  margin: 10px 20px 40px;
+}
+
+
+h6 {
+	color: #1dbde9;
+    font-size: 1em;
+    letter-spacing: 0.8em;
+    text-transform: uppercase;
+}
+.pull-left {
+	float: right !important;
+}
+
+.pull-left {
+	float: right !important;
+}
+
+.progress-bars{
+	margin-top:5rem;
+  }
+  
+  .progress{
+	height: 15px;
+	margin-bottom: 50px;
+	background-color: rgb(0,0,0);
+	border-radius: 100px;
+	}
+  
+  .progress-bar{
+	background-color: #e65a88;
+	height: 100%;
+	border-radius: 100px;
+  }
+  
+  .lang {
+    background-color:#1dbde9;
+  }
+.clearfix {display: block;}
+
+pre, code {
+	font-family: monospace, monospace;
+  }
+  pre {
+	overflow: auto;
+  }
+  pre > code {
+	display: block;
+	padding: 1rem;
+	word-wrap: normal;
+  }
+
+
 
 h1 {
 	text-transform: uppercase;
@@ -67,7 +131,7 @@ ul>li>a:hover {
 }
 mark {
     background-color:transparent;
-    color:yellow; 
+    color: #e65a88;
     font-weight:bold;
 }
 .grid-container {
@@ -78,7 +142,7 @@ mark {
   grid-template-columns: 1fr 1fr 1fr 2fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-gap: 1px 1px;
-  grid-template-areas: "header header header header" "nav summary summary summary" "nav examples examples examples" "nav education education experience";
+  grid-template-areas: "nav header header header" "nav summary summary summary" "nav examples examples examples" "nav education education experience";
 }
 
 header {
@@ -87,27 +151,34 @@ header {
   grid-template-columns: 1fr / 1fr;
   background-image:url("../images/me.png");
   background-size:cover;
-  height:500px;
+  height: 720px;
 }
 .summary {
   display: grid;
   grid-area: summary;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-gap: 1px 1px;
   grid-template-areas: "text skills";
+  padding: 20px 0px;
+  background: rgba(0,0,0,0.5);
 }
 .text {
   grid-area: text;
+  padding: 0px 20px;
 }
 .skills {
   grid-area: skills;
+  padding: 0px 20px;
 }
 .examples {
   grid-area: examples;
 }
 nav {
   grid-area: nav;
+  /* background-color: black; */
+  text-align: right;
+  padding-right: 20px;
+  position: fixed;
 }
 .education {
   grid-area: education;
