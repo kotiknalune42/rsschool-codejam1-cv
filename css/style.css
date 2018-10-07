@@ -2,11 +2,10 @@ html,
 body {
   margin: 0;
   height: 100%;
-  background: #12c2e9;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  font-family: 'Poppins', sans-serif;
+  background: #12c2e9; /* a fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9); 
+  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); 
+  font-family: 'Poppins', Arial, sans-serif;
   color:white;
 
 }
@@ -15,19 +14,17 @@ h1, h2, h3, h4, h5, h6 {
 	margin:0;
 	padding:0;
 }
-/*.grid-container * {
-  border: 1px solid #ccc;
-} */
 
+#result-link {display: none;}
 h2 {
 	font-size: 2.3em;
     margin: 10px 0px;
     border-left: #1dbde9 3px solid;
     padding-left: 10px;
+    text-transform: uppercase;
 }
 
 h3 {
-
   text-align: center;
   color: #fff;
   font-size: 1em;
@@ -36,8 +33,13 @@ h3 {
   padding: 30px 0px;
   border: 1px solid white;
   margin: 10px 20px 40px;
+  transition:1s ease-in-out;
 }
 
+h3:hover {
+  background:rgba(253, 253, 185, 0.5);
+  transition: 1s ease-in-out;
+}
 
 h6 {
 	color: #1dbde9;
@@ -140,9 +142,8 @@ mark {
   max-width:1024px;
   margin: 0 auto;
   grid-template-columns: 1fr 1fr 1fr 2fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-gap: 1px 1px;
-  grid-template-areas: "nav header header header" "nav summary summary summary" "nav examples examples examples" "nav education education experience";
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: "nav header header header" "nav summary summary summary" "nav examples examples examples" "nav experience experience experience" "nav footer footer footer";
 }
 
 header {
@@ -162,17 +163,58 @@ header {
   padding: 20px 0px;
   background: rgba(0,0,0,0.5);
 }
-.text {
+article {
   grid-area: text;
   padding: 0px 20px;
 }
-.skills {
+aside {
   grid-area: skills;
   padding: 0px 20px;
 }
 .examples {
+  display: grid;
   grid-area: examples;
+  grid-template: 1fr / 1fr 2fr;
+  grid-template-areas: "intro code";
+  padding: 20px;
+  background: rgba(223, 223, 223, 0.7);
 }
+
+.github {
+	background-color:#000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size: 1.2em;
+	padding: 15px 30px 15px;
+	text-decoration:none;
+	border: none;
+	border-radius: 40px;
+	transition:1s ease-in-out;
+
+}
+
+.github::before {
+	background-image: url('../images/git.ico');
+    background-size: 20px 20px;
+    display:inline-block;
+    width: 20px; 
+    height: 20px;
+    vertical-align:-15%;
+    content:"";
+}
+
+.github:hover {
+	background-color:#1dbde9;
+	letter-spacing:0.2em;
+	transition:0.5s ease-in-out;
+}
+.github:active {
+	position:relative;
+	top:1px;
+}
+
+
 nav {
   grid-area: nav;
   /* background-color: black; */
@@ -180,9 +222,25 @@ nav {
   padding-right: 20px;
   position: fixed;
 }
-.education {
-  grid-area: education;
+footer {
+  display: grid;
+  grid-area: footer;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "col1 col2 col3";
+  padding: 20px;
+  background: rgba(0,0,0,0.5);;
 }
 .experience {
   grid-area: experience;
+  padding: 20px 0px;
+  background: rgba(0,0,0,0.5);
+}
+
+figure {
+  /* background: black; */
+  /* border-radius: 20px; */
+  /* border: 1px solid #1dbde98c; */
+  /* float: right; */
+  margin: 0px 0px 0px 50px;
 }
